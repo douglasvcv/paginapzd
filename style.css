@@ -1,0 +1,135 @@
+* {
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+}
+body * {
+  color: var(--text-color);
+}
+body {
+  font-family: "Inter", sans-serif;
+  background: var(--bg);
+}
+:root {
+  --text-color: white;
+  --text-color-hover: black;
+  --bg: black;
+  --stroke-color: rgba(145, 132, 132, 0.5);
+  --surface-color: rgba(255, 255, 255, 0.1);
+  --surface-color-hover: rgb(182, 172, 172);
+  --highlight-color: rgba(255, 255, 255, 0.2);
+  /*--switch-bg-url:url(./assets/moon-stars.svg);*/
+}
+.light {
+  --text-color-hover: white;
+  --text-color: rgb(0, 0, 0);
+  --bg: white;
+  --stroke-color: rgba(0, 0, 0, 0.5);
+  --surface-color: rgba(0, 0, 0, 0.05);
+  --surface-color-hover: rgba(52, 48, 48, 0.951);
+  --highlight-color: rgba(0, 0, 0, 0.1);
+  /* --switch-bg-url:url(./assets/sun.svg);*/
+}
+/*profile*/
+#container {
+  width: 100%;
+  margin: 56px auto;
+  padding: 0px;
+}
+#profile {
+  text-align: center;
+  padding: 24px;
+  margin: 12px;
+}
+div img {
+  border-radius: 50%;
+}
+/*botão*/
+#switch {
+  position: relative;
+  width: 64px;
+  margin: 4px auto;
+}
+#switch button {
+  height: 32px;
+  width: 32px;
+  background: white no-repeat center;
+  border-radius: 50%;
+  background-image: var(--switch-bg-url);
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  transform: translateY(-50%);
+  top: 50%;
+  animation: slide-back 0.3s;
+}
+#switch span {
+  display: block;
+  background: var(--surface-color);
+  height: 24px;
+  width: 64px;
+  border: 1px solid var(--stroke-color);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 9999px;
+}
+.light #switch button {
+  animation: slide-in 0.3s forwards;
+}
+#switch button:hover {
+  outline: 8px solid var(--highlight-color);
+}
+
+#lista {
+  margin: auto;
+  width: 20%;
+
+  min-width: 280px;
+}
+ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  padding: 24px 0px;
+  gap: 16px;
+}
+ul li a {
+  border: var(--stroke-color);
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  padding: 16px 24px;
+  align-items: center;
+  background: var(--surface-color);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  font-weight: 500;
+  transition: background 0.5s;
+}
+ul li :hover {
+  background: var(--surface-color-hover);
+  border: var(--text-color);
+  color: var(--text-color-hover);
+}
+
+footer {
+  font-size: 10px;
+  margin-bottom: 50px;
+  text-align: center;
+}
+@keyframes slide-in {
+  from {
+    left: 0;
+  }
+  to {
+    left: 50%;
+  }
+}
+@keyframes slide-back {
+  from {
+    left: 50%;
+  }
+  to {
+    left: 0;
+  }
+}
